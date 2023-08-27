@@ -1,16 +1,15 @@
 package model;
-import controller.FuncionarioController;
 
 public class Funcionario {
     private String nome;
     private double salario;
 
+    public Funcionario (){//construtor padrao
+
+    }
     public Funcionario(String nome, double salario) {
         this.nome = nome;
         this.salario = salario;
-    }
-    public Funcionario (){
-
     }
 
     public String getNome() {
@@ -26,15 +25,19 @@ public class Funcionario {
     }
 
     public void setSalario(double salario) {
-        this.salario = salario;
+        double newSalario = this.salario + salario;
+        if (this.salario >= 0){
+            this.salario = salario;
+        } else{
+            System.out.println("==== ERRO! Menos de R$0,00 ====");
+        }
     }
 
     @Override
     public String toString() {
         return "Funcionario{" +
-                "nome='" + nome + '\'' +
-                ", salario=" + salario +
+                "Nome='" + nome + '\'' +
+                ", Salario=" + salario +
                 '}';
     }
-
 }
