@@ -20,7 +20,7 @@ public class Conta {
 
     @Override
     public String toString() {
-        return "Conta{" +
+        return "\nConta{" +
                 "saldo=" + saldo +
                 ", getSaldo=" + getSaldo +
                 '}';
