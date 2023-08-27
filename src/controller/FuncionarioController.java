@@ -4,10 +4,7 @@ import model.Produto;
 import model.Carro;
 import model.Conta;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 
 public class FuncionarioController {
@@ -51,6 +48,12 @@ public class FuncionarioController {
         funcionarios.add(f5);
         System.out.println(funcionarios);
 
+        //ordenacao da colecao
+        funcionarios.sort(Comparator.comparing(Funcionario::getNome));
+        System.out.println("\n\nColecao List ordenada:\n");
+        System.out.println(funcionarios);
+        System.out.println("------ FIM FUNCIONARIOS ------");
+
         // =================== PORDUTO =============================
         Produto p1 = new Produto("Mouse","Mouse USB OEX", 25.00, 50);
         Produto p2 = new Produto("Teclado", "Teclado sem fio", 80.00, 15);
@@ -86,6 +89,26 @@ public class FuncionarioController {
         carros.add(c5);
         System.out.println(carros);
 
+
+        System.out.println("\n\n---------- ordenacao tipo List ----------\n");
+        carros.sort(Comparator.comparing(Carro::getAnoFabricacao));
+        System.out.println(carros);
+
+        // ============= MAP ================
+        System.out.println("\n\n======== MAP CARROS =======");
+        Map<String, Carro> carroMap = new HashMap<>();
+        carroMap.put(c1.getModelo(), c1);
+        carroMap.put(c2.getModelo(), c2);
+        carroMap.put(c3.getModelo(), c3);
+        carroMap.put(c4.getModelo(), c4);
+        carroMap.put(c5.getModelo(), c5);
+        System.out.println(carroMap);
+
+        // ============== PSQUISA TIPO MAP =================
+        System.out.println("\n\n------ Pesquisa MAP -----");
+        System.out.println(carroMap.get(c3.getModelo()));
+
+
         //=============== CONTA =======================
 
         Conta con1 = new Conta(120.000,2500.00);
@@ -104,17 +127,6 @@ public class FuncionarioController {
         contas.add(con4);
         contas.add(con5);
         System.out.println(contas);
-
-        // ============= MAP ================
-        System.out.println("\n======== MAP CARROS =======");
-        Map<String, Carro> carroMap = new HashMap<>();
-        carroMap.put(c1.getModelo(), c1);
-        carroMap.put(c2.getModelo(), c2);
-        carroMap.put(c3.getModelo(), c3);
-        carroMap.put(c4.getModelo(), c4);
-        carroMap.put(c5.getModelo(), c5);
-        System.out.println(carroMap);
-
 
     }
 }
