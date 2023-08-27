@@ -5,7 +5,9 @@ import model.Carro;
 import model.Conta;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 
 public class FuncionarioController {
@@ -102,6 +104,16 @@ public class FuncionarioController {
         contas.add(con4);
         contas.add(con5);
         System.out.println(contas);
+
+        // ============= MAP ================
+        System.out.println("\n======== MAP CARROS =======");
+        Map<String, Carro> carroMap = new HashMap<>();
+        carroMap.put(c1.getModelo(), c1);
+        carroMap.put(c2.getModelo(), c2);
+        carroMap.put(c3.getModelo(), c3);
+        carroMap.put(c4.getModelo(), c4);
+        carroMap.put(c5.getModelo(), c5);
+        System.out.println(carroMap);
 
 
     }
